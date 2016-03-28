@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,6 +52,19 @@ public class Racinisation {
 	    	  
 	    }
 	}
+    //inserer un mot
+     public void Ins (String Mot){
+		
+		try{
+        String query= "INSERT INTO Enfant () VALUES("+ Mot +")" ;
+        
+        ResultSet r= this.stmt.executeQuery(query);
+		}catch ( SQLException e) {
+			System.out.println("sql exception : "+ e);
+		}
+		
+	}
+    
 	
 	
 }
