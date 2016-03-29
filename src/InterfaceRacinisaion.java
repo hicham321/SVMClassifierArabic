@@ -2,6 +2,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 //l'interface pour ajouté un racin pour chaque mot 
@@ -19,6 +20,27 @@ public class InterfaceRacinisaion extends JFrame {
 	private JTextField TextRacin = new JTextField();
 	
 	public InterfaceRacinisaion(){
+		
+		this.setTitle("Racinisation");
+		
+        this.setSize(600, 300);
+		
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		
+		panel.add(this.Ok);
+		
+		panel.add(this.AjoutRacin);
+		
+		panel.add(this.Annulé);
+		
+		panel.add(this.TextMot);
+		
+		panel.add(this.TextRacin);
+		
+		this.add(panel);
+
 		
 	}
 	
