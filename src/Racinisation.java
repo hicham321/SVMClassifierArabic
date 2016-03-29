@@ -52,11 +52,11 @@ public class Racinisation {
 	    	  
 	    }
 	}
-    //inserer un mot
+    //inserer un mot  
      public void Ins (String Mot){
 		
 		try{
-        String query= "INSERT INTO Enfant () VALUES("+ Mot +")" ;
+        String query= "INSERT INTO Racinisation (Mot) VALUES("+ Mot +")" ;
         
         ResultSet r= this.stmt.executeQuery(query);
 		}catch ( SQLException e) {
@@ -64,6 +64,17 @@ public class Racinisation {
 		}
 		
 	}
+     public void insRacin(String racin){
+    	 
+    	 try{
+    	        String query= "INSERT INTO Racinisation (Racin) VALUES("+ racin +")" ;
+    	        
+    	        ResultSet r= this.stmt.executeQuery(query);
+    			}catch ( SQLException e) {
+    				System.out.println("sql exception : "+ e);
+    			}
+    	 
+     }
     
 	
 	
