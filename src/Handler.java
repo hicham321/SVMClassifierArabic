@@ -22,6 +22,11 @@ public class Handler {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
+			//l'action du boutton ajoubutton 
+			if (e.getSource()==interfaceRacin.getAjoutRacinButton()) {
+				
+				
+			}
 			
 		}
 	}
