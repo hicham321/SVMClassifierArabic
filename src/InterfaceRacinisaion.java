@@ -76,6 +76,19 @@ public class InterfaceRacinisaion extends JFrame {
 		
 		return this.TextRacin.getText();
 	}
+    
+    public JTextField getTextMott( ){
+		
+		return this.TextMot;
+	}
+    
+    
+    public JTextField getTextRacint( ){
+		
+		return this.TextRacin;
+	}
+    
+    
 	
 	
 	

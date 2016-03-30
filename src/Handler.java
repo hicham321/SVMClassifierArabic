@@ -29,6 +29,11 @@ public class Handler {
 				racinisation.Ins(interfaceRacin.getTextMot());
 				racinisation.insRacin(interfaceRacin.getTextRacin());
 				
+				interfaceRacin.getTextMott().setText("");
+				interfaceRacin.getTextRacint().setText("");
+				
+				//ajouté un autre mot (faire un recherche sur les mot retant)
+				
 			}
 			
 		}
