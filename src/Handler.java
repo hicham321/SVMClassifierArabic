@@ -13,6 +13,7 @@ public class Handler {
 	public Handler(Racinisation racinisation , InterfaceRacinisaion interfaceRacin){
 		
 		this.racinisation= racinisation;
+		
 		this.interfaceRacin= interfaceRacin;
 		
 	    this.interfaceRacin.RacinInterfAddActionListener(new listnerPourInterface());
@@ -25,6 +26,8 @@ public class Handler {
 			//l'action du boutton ajoubutton 
 			if (e.getSource()==interfaceRacin.getAjoutRacinButton()) {
 				
+				racinisation.Ins(interfaceRacin.getTextMot());
+				racinisation.insRacin(interfaceRacin.getTextRacin());
 				
 			}
 			

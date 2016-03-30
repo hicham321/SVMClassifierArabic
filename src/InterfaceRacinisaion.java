@@ -52,7 +52,7 @@ public class InterfaceRacinisaion extends JFrame {
 		this.Annul√.addActionListener(listner);
 		
 	}
-	
+	// les methode get 
 	public JButton getOkButton (){
 		
 		return this.Ok;
@@ -66,6 +66,17 @@ public class InterfaceRacinisaion extends JFrame {
 		
 		return this.AjoutRacin;
 	}
+	
+	public String getTextMot( ){
+		
+		return this.TextMot.getText();
+	}
+	
+    public String getTextRacin( ){
+		
+		return this.TextRacin.getText();
+	}
+	
 	
 	
 	
