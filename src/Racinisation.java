@@ -67,12 +67,24 @@ public class Racinisation {
      public void insRacin(String racin){
     	 
     	 try{
-    	        String query= "INSERT INTO Racinisation (Racin) VALUES("+ racin +")" ;
+    	 String query= "INSERT INTO Racinisation (Racin) VALUES("+ racin +")" ;
     	        
-    	        ResultSet r= this.stmt.executeQuery(query);
-    			}catch ( SQLException e) {
-    				System.out.println("sql exception : "+ e);
-    			}
+    	 ResultSet r= this.stmt.executeQuery(query);
+         }catch ( SQLException e) {
+    			System.out.println("sql exception : "+ e);
+    	 }
+    	 
+     }
+     public void rech (String mot){
+    	 
+    	 try{
+         String query= "SELECT Mot from Racinisation WHERE Racinisation.Mot= "+ mot +"" ;
+        	        
+         ResultSet r= this.stmt.executeQuery(query);
+         }catch ( SQLException e) {
+        			System.out.println("sql exception : "+ e);
+         }
+    	 
     	 
      }
      
