@@ -1,15 +1,22 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 // Cette class fait la racinisation manuelement 
 public class Racinisation {
 	private Connection con ;
 
 	private Statement stmt;
+	
+	private ArrayList<String> MotRacine;
 
 	
 	public Racinisation (){
@@ -87,6 +94,16 @@ public class Racinisation {
     	 
     	 
      }
+     
+     public void LanceRacin() throws FileNotFoundException, UnsupportedEncodingException, IOException{
+    	 
+    	    File f = new File("");
+			
+			StopWord st =new StopWord(f);
+			
+    	 
+     }
+     //crie des method trouvé racin , et racin non trouvé , 
      
     
 	
