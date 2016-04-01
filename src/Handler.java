@@ -37,7 +37,7 @@ public class Handler {
 				interfaceRacin.getTextMott().setText("");
 				interfaceRacin.getTextRacint().setText("");
 				
-				//ajout� un autre mot (faire un recherche sur les mot retant)
+				//ajout un autre mot (faire un recherche sur les mot retant)
 				
 			}
 			
@@ -51,6 +51,8 @@ public class Handler {
 			}
 			if(e.getSource()== interfaceRacin.getLanceRacinButton()){
 					interfaceRacin.getLanceRacinButton().setEnabled(false);
+					
+					
 					
 					//la methode de racinisation 
 
