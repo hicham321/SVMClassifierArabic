@@ -13,7 +13,7 @@ public class InterfaceRacinisaion extends JFrame {
 	
 	private JButton AjoutRacin = new JButton();
 	 
-	private JButton Annul√ = new JButton();
+	private JButton Annul = new JButton();
 	
 	private JTextField TextMot = new JTextField();
 	
@@ -33,7 +33,7 @@ public class InterfaceRacinisaion extends JFrame {
 		
 		panel.add(this.AjoutRacin);
 		
-		panel.add(this.Annul√);
+		panel.add(this.Annul);
 		
 		panel.add(this.TextMot);
 		
@@ -49,7 +49,7 @@ public class InterfaceRacinisaion extends JFrame {
 		
 		this.AjoutRacin.addActionListener(listner);
 		this.Ok.addActionListener(listner);
-		this.Annul√.addActionListener(listner);
+		this.Annul.addActionListener(listner);
 		
 	}
 	// les methode get 
@@ -59,7 +59,7 @@ public class InterfaceRacinisaion extends JFrame {
 	}
 	
 	public JButton getAnnuleButton(){
-		return this.Annul√;
+		return this.Annul;
 	}
 	
 	public JButton getAjoutRacinButton(){
