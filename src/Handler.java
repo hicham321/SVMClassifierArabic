@@ -32,7 +32,24 @@ public class Handler {
 				interfaceRacin.getTextMott().setText("");
 				interfaceRacin.getTextRacint().setText("");
 				
-				//ajouté un autre mot (faire un recherche sur les mot retant)
+				//ajoutï¿½ un autre mot (faire un recherche sur les mot retant)
+				
+			}
+			
+			if(e.getSource()== interfaceRacin.getOkButton()){
+				interfaceRacin.dispose();
+				
+			}
+			if(e.getSource()==interfaceRacin.getAnnuleButton()){
+				interfaceRacin.dispose();
+
+			}
+			if(e.getSource()== interfaceRacin.getLanceRacinButton()){
+				
+				interfaceRacin.getLanceRacinButton().setEnabled(false);
+			
+				
+				
 				
 			}
 			

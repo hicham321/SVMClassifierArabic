@@ -15,6 +15,8 @@ public class InterfaceRacinisaion extends JFrame {
 	 
 	private JButton Annul = new JButton();
 	
+	private JButton lanceRacinisation= new JButton();
+	
 	private JTextField TextMot = new JTextField();
 	
 	private JTextField TextRacin = new JTextField();
@@ -35,6 +37,8 @@ public class InterfaceRacinisaion extends JFrame {
 		
 		panel.add(this.Annul);
 		
+		panel.add(lanceRacinisation);
+		
 		panel.add(this.TextMot);
 		
 		panel.add(this.TextRacin);
@@ -50,6 +54,7 @@ public class InterfaceRacinisaion extends JFrame {
 		this.AjoutRacin.addActionListener(listner);
 		this.Ok.addActionListener(listner);
 		this.Annul.addActionListener(listner);
+		this.lanceRacinisation.addActionListener(listner);
 		
 	}
 	// les methode get 
@@ -65,6 +70,11 @@ public class InterfaceRacinisaion extends JFrame {
 	public JButton getAjoutRacinButton(){
 		
 		return this.AjoutRacin;
+	}
+	
+	public JButton getLanceRacinButton(){
+		
+		return this.lanceRacinisation;
 	}
 	
 	public String getTextMot( ){
