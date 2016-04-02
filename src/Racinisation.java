@@ -90,7 +90,7 @@ public class Racinisation {
          	        
          ResultSet r= this.stmt.executeQuery(query);
          //Return a string from the result set 
-         String result = r.getString(0);
+         String result = r.getString(1);
          
     	 return result;
 
@@ -111,7 +111,8 @@ public class Racinisation {
 			ArrayList<String>list=st.EliminerStopWord();
 			
 			for(int i =0;i<list.size();i++){
-				Rech();
+				
+				rech(list.get(i));
 			}
 
 			
