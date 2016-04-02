@@ -82,14 +82,21 @@ public class Racinisation {
     	 }
     	 
      }
-     public void rech (String mot){
+     public String rech (String mot){
     	 
     	 try{
-         String query= "SELECT Mot from Racinisation WHERE Racinisation.Mot= "+ mot +"" ;
-        	        
+         String query= "SELECT Racin from Racinisation WHERE Racinisation.Mot= "+ mot +"" ;
+         //need to return the string for the racin
+         	        
          ResultSet r= this.stmt.executeQuery(query);
+         //Return a string from the result set 
+         String result = r.getString(0);
+         
+    	 return result;
+
          }catch ( SQLException e) {
         			System.out.println("sql exception : "+ e);
+        			return "";
          }
     	 
     	 
@@ -97,9 +104,18 @@ public class Racinisation {
      
      public void LanceRacin() throws FileNotFoundException, UnsupportedEncodingException, IOException{
     	 
-    	    File f = new File("");
+    	    File f = new File("inserer le lien ver les mots vides");
 			
 			StopWord st =new StopWord(f);
+			
+			ArrayList<String>list=st.EliminerStopWord();
+			
+			for(int i =0;i<list.size();i++){
+				Rech();
+			}
+
+			
+			
 			
     	 
      }

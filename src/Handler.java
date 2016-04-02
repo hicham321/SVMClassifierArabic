@@ -67,9 +67,8 @@ public class Handler {
 					
 					
 					//la methode de racinisation 
-
+					//iteration sur les mots non vides 
 				
-					
 				} 
 				
 				
