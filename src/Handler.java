@@ -3,9 +3,12 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 import org.apache.commons.lang.UnhandledException;
 
+
+ 
 //cette classe relie les donnée de l'interface et la classe Racnisation
 
 public class Handler {
@@ -14,6 +17,9 @@ public class Handler {
 	Racinisation racinisation= new Racinisation();
 	
 	InterfaceRacinisaion interfaceRacin = new InterfaceRacinisaion();
+	
+	private ArrayList<String> MotRacin;
+
 	
 	public Handler(Racinisation racinisation , InterfaceRacinisaion interfaceRacin){
 		
@@ -31,13 +37,19 @@ public class Handler {
 			//l'action du boutton ajoubutton 
 			if (e.getSource()==interfaceRacin.getAjoutRacinButton()) {
 				
+				String Racin =interfaceRacin.getTextRacin(); 
+				
+				//inserer dans la base
 				racinisation.Ins(interfaceRacin.getTextMot());
-				racinisation.insRacin(interfaceRacin.getTextRacin());
+				racinisation.insRacin(Racin);
+				
+				//inserer dans la liste
+				MotRacin.add(Racin);
 				
 				interfaceRacin.getTextMott().setText("");
 				interfaceRacin.getTextRacint().setText("");
 				
-				//ajout un autre mot (faire un recherche sur les mot retant)
+				//ajoutgi un autre mot (faire un recherche sur les mot retant)
 				
 			}
 			
