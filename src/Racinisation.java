@@ -36,19 +36,19 @@ public class Racinisation {
 
 	        // Returns a ResultSet that contains the data produced by the query;
 	        // never null
-	        String query= "insert query here";
-	        ResultSet rs = stmt.executeQuery(query);
+	        //String query= "insert query here";
+	        //ResultSet rs = stmt.executeQuery(query);
 
 
-	        while (rs.next()) {
+	        //while (rs.next()) {
 	            /*String fName = rs.getString("Field1");
 	           String lName = rs.getString("LastName");
 	            int age = rs.getInt("ID");*/
-	        }
+	       // }
 
-	        stmt.close();
+	       // stmt.close();
 
-	        con.close();
+	       // con.close();
 	    } catch (SQLException ex) {
 	        System.err.println("SQLException: " + ex.getMessage());
 	    } 
@@ -85,37 +85,42 @@ public class Racinisation {
      public String rech (String mot){
     	 
     	 try{
-         String query= "SELECT Racin from Racinisation WHERE Racinisation.Mot= "+ mot +"" ;
+         String query= "SELECT Racin from Racinisation WHERE Mot= '" +mot +"'" ;
          //need to return the string for the racin
          	        
          ResultSet r= this.stmt.executeQuery(query);
          //Return a string from the result set 
-         String result = r.getString(1);
+         //String result = r.getString("Racin");
+         
+         /*if (r.wasNull()) {
+			return "Null";
+		 }*/
+         String result ="Null";
+         while (r.next() ) {
+	             result = r.getString("Racin");
+        	}
          
     	 return result;
 
          }catch ( SQLException e) {
-        			System.out.println("sql exception : "+ e);
+        			System.out.println("sql exce : "+ e);
         			return "";
          }
     	 
     	 
      }
      
-     public void LanceRacin() throws FileNotFoundException, UnsupportedEncodingException, IOException{
+     public ArrayList<String> LanceRacin() throws FileNotFoundException, UnsupportedEncodingException, IOException{
     	 
-    	    File f = new File("inserer le lien ver les mots vides");
+    	    File f = new File("C:/Users/Hicham/Desktop/ffff.txt");
 			
 			StopWord st =new StopWord(f);
 			
 			ArrayList<String>list=st.EliminerStopWord();
 			
-			for(int i =0;i<list.size();i++){
-				
-				rech(list.get(i));
-			}
-
 			
+
+			return list;
 			
 			
     	 

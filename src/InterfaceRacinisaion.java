@@ -9,17 +9,17 @@ import javax.swing.JTextField;
 
 public class InterfaceRacinisaion extends JFrame {
 	
-	private JButton Ok = new JButton();
+	private JButton Ok = new JButton("OK");
 	
-	private JButton AjoutRacin = new JButton();
+	private JButton AjoutRacin = new JButton("Ajouté un racine");
 	 
-	private JButton Annul = new JButton();
+	private JButton Annul = new JButton("Annulé");
 	
-	private JButton lanceRacinisation= new JButton();
+	private JButton lanceRacinisation= new JButton("lance Racinisation");
 	
-	private JTextField TextMot = new JTextField();
+	private JTextField TextMot = new JTextField(10);
 	
-	private JTextField TextRacin = new JTextField();
+	private JTextField TextRacin = new JTextField(10);
 	
 	public InterfaceRacinisaion(){
 		

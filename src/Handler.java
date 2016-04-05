@@ -62,13 +62,32 @@ public class Handler {
 
 			}
 			if(e.getSource()== interfaceRacin.getLanceRacinButton()){
+				try{
+					racinisation.connectio("jdbc:ucanaccess://E:/Database71.accdb");
 					interfaceRacin.getLanceRacinButton().setEnabled(false);
-					
+					ArrayList<String> list =racinisation.LanceRacin();
+					for(int i =0;i<list.size();i++){
+						
+						
+						String racin=racinisation.rech(list.get(i));
+						if( racin !="Null"){
+							MotRacin.add(racin);
+						}
+						
+								
+							}
+							
+							
+						
+					}
 					
 					
 					//la methode de racinisation 
-					//iteration sur les mots non vides 
-				
+					//iteration sur les mots non vides
+				catch(Exception t){
+					t.printStackTrace();
+				}
+		}
 				} 
 				
 				
@@ -76,7 +95,7 @@ public class Handler {
 			}
 			
 		}
-	}
+	
 	
 	
 
