@@ -66,12 +66,18 @@ public class Handler {
 					racinisation.connectio("jdbc:ucanaccess://E:/Database71.accdb");
 					interfaceRacin.getLanceRacinButton().setEnabled(false);
 					ArrayList<String> list =racinisation.LanceRacin();
-					for(int i =0;i<list.size();i++){
+					
+					int s=0;
+					while(s<list.size()){
 						
 						
-						String racin=racinisation.rech(list.get(i));
+						String racin=racinisation.rech(list.get(s));
 						if( racin !="Null"){
 							MotRacin.add(racin);
+							s++;
+						}
+						else{
+							
 						}
 						
 								
