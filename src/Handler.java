@@ -19,7 +19,12 @@ public class Handler {
 	InterfaceRacinisaion interfaceRacin = new InterfaceRacinisaion();
 	
 	private ArrayList<String> MotRacin;
+	
+	private ArrayList<String> MotRacinTemp;
+	
+	private ArrayList<String> MotNonRacin;
 
+	private int compteur;
 	
 	public Handler(Racinisation racinisation , InterfaceRacinisaion interfaceRacin){
 		
@@ -67,25 +72,27 @@ public class Handler {
 					interfaceRacin.getLanceRacinButton().setEnabled(false);
 					ArrayList<String> list =racinisation.LanceRacin();
 					
-					int s=0;
-					while(s<list.size()){
 						
-						
-						String racin=racinisation.rech(list.get(s));
-						if( racin !="Null"){
-							MotRacin.add(racin);
-							s++;
-						}
-						else{
+						for (int i = 0; i < list.size(); i++) {
+							String Mot=racinisation.rech(list.get(i));
+							if( Mot !="Null"){
+								MotRacin.add(Mot);
 							
+						    }else{
+						    	
+						    	MotNonRacin.add(list.get(i));	
+						    }
+						
 						}
+							
+						
 						
 								
 							}
 							
 							
 						
-					}
+					
 					
 					
 					//la methode de racinisation 
