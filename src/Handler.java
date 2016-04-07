@@ -5,7 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import org.apache.commons.lang.UnhandledException;
+
+import com.sun.webkit.ContextMenu.ShowContext;
 
 
  
@@ -24,7 +28,7 @@ public class Handler {
 	
 	private ArrayList<String> MotNonRacin;
 
-	private int compteur;
+	private int compteur ;
 	
 	public Handler(Racinisation racinisation , InterfaceRacinisaion interfaceRacin){
 		
@@ -41,20 +45,26 @@ public class Handler {
 			
 			//l'action du boutton ajoubutton 
 			if (e.getSource()==interfaceRacin.getAjoutRacinButton()) {
+				if(interfaceRacin.getTextRacin().isEmpty()){
+				   JOptionPane.showMessageDialog(null, "entreé un Racin pour continue");
+				}else{
+					String Racin =interfaceRacin.getTextRacin(); 
+					
+				    //inserer dans la base
+				    racinisation.Ins(interfaceRacin.getTextMot());
+				    racinisation.insRacin(Racin);
 				
-				String Racin =interfaceRacin.getTextRacin(); 
+				    //inserer dans la liste
+				    MotRacin.add(Racin);
 				
-				//inserer dans la base
-				racinisation.Ins(interfaceRacin.getTextMot());
-				racinisation.insRacin(Racin);
+				    interfaceRacin.getTextMott().setText(MotNonRacin.get(compteur+1));
+				    interfaceRacin.getTextRacint().setText("");
 				
-				//inserer dans la liste
-				MotRacin.add(Racin);
-				
-				interfaceRacin.getTextMott().setText("");
-				interfaceRacin.getTextRacint().setText("");
-				
-				//ajoutgi un autre mot (faire un recherche sur les mot retant)
+				    compteur= compteur+1;
+				    //ajoutgi un autre mot (faire un recherche sur les mot retant)
+					
+				}		
+					
 				
 			}
 			
@@ -84,7 +94,13 @@ public class Handler {
 						    }
 						
 						}
-							
+						if(MotNonRacin.isEmpty()){
+							JOptionPane.showMessageDialog(null, " La Racinisation est terminé");
+						}
+						else{
+							compteur=0;
+						interfaceRacin.getTextMott().setText(MotNonRacin.get(compteur));
+						}
 						
 						
 								

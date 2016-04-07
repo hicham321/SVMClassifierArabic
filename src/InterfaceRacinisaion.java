@@ -13,7 +13,7 @@ public class InterfaceRacinisaion extends JFrame {
 	
 	private JButton AjoutRacin = new JButton("Ajouté un racine");
 	 
-	private JButton Annul = new JButton("Annulé");
+	private JButton Annule = new JButton("Annulé");
 	
 	private JButton lanceRacinisation= new JButton("lance Racinisation");
 	
@@ -35,7 +35,7 @@ public class InterfaceRacinisaion extends JFrame {
 		
 		panel.add(this.AjoutRacin);
 		
-		panel.add(this.Annul);
+		panel.add(this.Annule);
 		
 		panel.add(lanceRacinisation);
 		
@@ -53,7 +53,7 @@ public class InterfaceRacinisaion extends JFrame {
 		
 		this.AjoutRacin.addActionListener(listner);
 		this.Ok.addActionListener(listner);
-		this.Annul.addActionListener(listner);
+		this.Annule.addActionListener(listner);
 		this.lanceRacinisation.addActionListener(listner);
 		
 	}
@@ -64,7 +64,7 @@ public class InterfaceRacinisaion extends JFrame {
 	}
 	
 	public JButton getAnnuleButton(){
-		return this.Annul;
+		return this.Annule;
 	}
 	
 	public JButton getAjoutRacinButton(){
@@ -98,6 +98,10 @@ public class InterfaceRacinisaion extends JFrame {
 		return this.TextRacin;
 	}
     
+    public void setextRacin(String textRacin){
+    	
+    	this.TextRacin.setText(textRacin);
+    }
     
 	
 	
