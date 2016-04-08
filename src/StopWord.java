@@ -162,7 +162,7 @@ public class StopWord   {
       // l'utilistateur programeur peut ajouter un lien vers le fichier text qu'il veut faire eleminer les stop words 
 	  // l'utilisateur doit pas modifier ou manipuler les stop words .
 		// la resultat finale doit affiche le texte avec l'elimination des Stop words .
-		File file= new File("C:/Users/Hicham/Desktop/stop-words_arabic_1_ar.txt");
+		File file= new File("C:/Users/Hicham/Desktop/ffff.txt");
 		File file2= new File("liens vers la ripertoire des fichiers dans le stock ");
 		
 		StopWord StopWordObject= new StopWord(file);
@@ -171,7 +171,8 @@ public class StopWord   {
 		// affichage des mot finale
 		for(int i=0; i<list.size();i++){
 			
-		System.out.print(list.get(i));	
+		System.out.print(list.get(i));
+		
 		}
 	   
 	}

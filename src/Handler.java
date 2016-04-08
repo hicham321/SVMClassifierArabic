@@ -22,11 +22,11 @@ public class Handler {
 	
 	InterfaceRacinisaion interfaceRacin = new InterfaceRacinisaion();
 	
-	private ArrayList<String> MotRacin;
+	private ArrayList<String> MotRacin= new ArrayList<String>();
 	
-	private ArrayList<String> MotRacinTemp;
+	private ArrayList<String> MotRacinTemp=new ArrayList<String>();
 	
-	private ArrayList<String> MotNonRacin;
+	private ArrayList<String> MotNonRacin= new ArrayList<String>();
 
 	private int compteur ;
 	
@@ -82,16 +82,19 @@ public class Handler {
 					interfaceRacin.getLanceRacinButton().setEnabled(false);
 					ArrayList<String> list =racinisation.LanceRacin();
 					
+					
+					
 						
 						for (int i = 0; i < list.size(); i++) {
 							String Mot=racinisation.rech(list.get(i));
 							if( Mot !="Null"){
 								MotRacin.add(Mot);
 							
-						    }else{
-						    	
+						    }
+							if(Mot=="Null"){
 						    	MotNonRacin.add(list.get(i));	
 						    }
+							
 						
 						}
 						if(MotNonRacin.isEmpty()){

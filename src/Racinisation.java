@@ -99,7 +99,6 @@ public class Racinisation {
          while (r.next() ) {
 	             result = r.getString("Racin");
         	}
-         
     	 return result;
 
          }catch ( SQLException e) {
@@ -118,12 +117,8 @@ public class Racinisation {
 			
 			ArrayList<String>list=st.EliminerStopWord();
 			
-			
-
 			return list;
-			
-			
-    	 
+			 
      }
      //crie des method trouvé racin , et racin non trouvé , 
      
