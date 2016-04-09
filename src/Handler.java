@@ -51,8 +51,10 @@ public class Handler {
 					String Racin =interfaceRacin.getTextRacin(); 
 					
 				    //inserer dans la base
-				    racinisation.Ins(interfaceRacin.getTextMot());
-				    racinisation.insRacin(Racin);
+				    /*racinisation.Ins(interfaceRacin.getTextMot());
+				    racinisation.insRacin(Racin);*/
+					
+					racinisation.InsT(interfaceRacin.getTextMot(), Racin);
 				
 				    //inserer dans la liste
 				    MotRacin.add(Racin);
@@ -78,7 +80,8 @@ public class Handler {
 			}
 			if(e.getSource()== interfaceRacin.getLanceRacinButton()){
 				try{
-					racinisation.connectio("jdbc:ucanaccess://E:/Database71.accdb");
+					racinisation.connectio("jdbc:ucanaccess://C:/Users/Hicham/Desktop/Database71.accdb");
+					
 					interfaceRacin.getLanceRacinButton().setEnabled(false);
 					ArrayList<String> list =racinisation.LanceRacin();
 					

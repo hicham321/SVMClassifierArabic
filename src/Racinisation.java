@@ -71,10 +71,22 @@ public class Racinisation {
 		}
 		
 	}
+     public void InsT (String Mot,String racin){
+    	 
+    	 try{
+        	 String query= "INSERT INTO Racinisation (Mot,Racin) VALUES('"+ Mot+"'"+","+"'"+racin +"')" ;
+        	        
+        	 boolean r= this.stmt.execute(query);
+             }catch ( SQLException e) {
+        			System.out.println("sql exception : "+ e);
+        	 }
+    	 
+     }
+     
      public void insRacin(String racin){
     	 
     	 try{
-    	 String query= "INSERT INTO Racinisation (Racin) VALUES("+ racin +")" ;
+    	 String query= "INSERT INTO Racinisation (Racin) VALUES('"+ racin +"')" ;
     	        
     	 ResultSet r= this.stmt.executeQuery(query);
          }catch ( SQLException e) {
