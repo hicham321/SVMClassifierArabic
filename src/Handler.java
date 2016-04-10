@@ -1,15 +1,10 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import org.apache.commons.lang.UnhandledException;
 
-import com.sun.webkit.ContextMenu.ShowContext;
 
 
  
@@ -47,7 +42,13 @@ public class Handler {
 			if (e.getSource()==interfaceRacin.getAjoutRacinButton()) {
 				if(interfaceRacin.getTextRacin().isEmpty()){
 				   JOptionPane.showMessageDialog(null, "entreé un Racin pour continue");
-				}else{
+				}
+				if(compteur==MotNonRacin.size()-1){
+				   JOptionPane.showMessageDialog(null, "La racinisagtion est terminé");
+				   interfaceRacin.getTextMott().setText("");
+				    interfaceRacin.getTextRacint().setText("");
+				}
+				else{
 					String Racin =interfaceRacin.getTextRacin(); 
 					
 				    //inserer dans la base
@@ -105,6 +106,7 @@ public class Handler {
 						}
 						else{
 							compteur=0;
+							System.out.println(MotNonRacin.get(compteur));
 						interfaceRacin.getTextMott().setText(MotNonRacin.get(compteur));
 						}
 						
