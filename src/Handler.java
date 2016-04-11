@@ -43,31 +43,44 @@ public class Handler {
 				if(interfaceRacin.getTextRacin().isEmpty()){
 				   JOptionPane.showMessageDialog(null, "entreé un Racin pour continue");
 				}
-				if(compteur==MotNonRacin.size()-1){
-				   JOptionPane.showMessageDialog(null, "La racinisagtion est terminé");
-				   interfaceRacin.getTextMott().setText("");
-				    interfaceRacin.getTextRacint().setText("");
-				}
+				
 				else{
-					String Racin =interfaceRacin.getTextRacin(); 
 					
-				    //inserer dans la base
-				    /*racinisation.Ins(interfaceRacin.getTextMot());
-				    racinisation.insRacin(Racin);*/
-					
-					racinisation.InsT(interfaceRacin.getTextMot(), Racin);
+				    if(compteur==MotNonRacin.size()-1){
+						   JOptionPane.showMessageDialog(null, "La racinisagtion est terminé");
+						   String Racin =interfaceRacin.getTextRacin(); 
+						   String Mot = interfaceRacin.getTextMot();
+
+						   System.out.println(MotNonRacin.get(compteur));
+						   racinisation.InsT(Mot, Racin);
+						   interfaceRacin.getTextMott().setText("");
+						   interfaceRacin.getTextRacint().setText("");
+						    
+				    }else{
+						   System.out.println(MotNonRacin.get(compteur));
+
+						   String Racin =interfaceRacin.getTextRacin(); 
+						   String Mot = interfaceRacin.getTextMot();
+						   System.out.println(MotNonRacin.get(compteur));
+
+						   //inserer dans la base
+						   /*racinisation.Ins(interfaceRacin.getTextMot());
+						   racinisation.insRacin(Racin);*/
+							
+						   racinisation.InsT(Mot, Racin);
+						
+						   //inserer dans la liste
+						   MotRacin.add(Racin);
+						
+						   interfaceRacin.getTextMott().setText(MotNonRacin.get(compteur+1));
+						   interfaceRacin.getTextRacint().setText("");
 				
-				    //inserer dans la liste
-				    MotRacin.add(Racin);
-				
-				    interfaceRacin.getTextMott().setText(MotNonRacin.get(compteur+1));
-				    interfaceRacin.getTextRacint().setText("");
-				
-				    compteur= compteur+1;
-				    //ajoutgi un autre mot (faire un recherche sur les mot retant)
+				           compteur= compteur+1;
+				         }
+				           //ajoutgi un autre mot (faire un recherche sur les mot retant)
 					
-				}		
-					
+				   }		
+				 	
 				
 			}
 			
@@ -106,22 +119,13 @@ public class Handler {
 						}
 						else{
 							compteur=0;
-							System.out.println(MotNonRacin.get(compteur));
-						interfaceRacin.getTextMott().setText(MotNonRacin.get(compteur));
+						interfaceRacin.getTextMott().setText(MotNonRacin.get(compteur).toString());
 						}
 						
 						
 								
 							}
-							
-							
-						
-					
-					
-					
-					//la methode de racinisation 
-					//iteration sur les mots non vides
-				catch(Exception t){
+					catch(Exception t){
 					t.printStackTrace();
 				}
 		}
@@ -133,7 +137,3 @@ public class Handler {
 			
 		}
 	
-	
-	
-
-

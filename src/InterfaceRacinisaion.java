@@ -79,7 +79,7 @@ public class InterfaceRacinisaion extends JFrame {
 	
 	public String getTextMot( ){
 		
-		return this.TextMot.getText();
+		return this.TextMot.getText().toString();
 	}
 	
     public String getTextRacin( ){
