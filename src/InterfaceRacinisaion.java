@@ -17,7 +17,7 @@ public class InterfaceRacinisaion extends JFrame {
 	 
 	private JButton Annule = new JButton("Annulé");
 	
-	private JFileChooser Choisi;
+	private JButton Choisi= new JButton("choisi un fichier");
 	
 	private JButton lanceRacinisation= new JButton("lance Racinisation");
 	
@@ -43,7 +43,7 @@ public class InterfaceRacinisaion extends JFrame {
 		
 		panel.add(this.Ok);
 		
-		this.Ok.setBounds(150, 220, 80, 25);
+		this.Ok.setBounds(100, 220, 80, 25);
 				
 		panel.add(this.AjoutRacin);
 		
@@ -52,6 +52,10 @@ public class InterfaceRacinisaion extends JFrame {
 		panel.add(this.Annule);
 		
 		this.Annule.setBounds(400, 220, 80, 25);
+		
+		panel.add(this.Choisi);
+		
+		this.Choisi.setBounds(230, 220, 130, 25);
 		
 		panel.add(lanceRacinisation);
 		

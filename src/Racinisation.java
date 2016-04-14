@@ -121,10 +121,11 @@ public class Racinisation {
     	 
      }
      
-     public ArrayList<String> LanceRacin() throws FileNotFoundException, UnsupportedEncodingException, IOException{
+     public ArrayList<String> LanceRacin(File file) throws FileNotFoundException, UnsupportedEncodingException, IOException{
     	 
     	    File f = new File("C:/Users/Hicham/Desktop/ffff.txt");
-			
+			//StopWord file =new StopWord(file);
+
 			StopWord st =new StopWord(f);
 			
 			ArrayList<String>list=st.EliminerStopWord();

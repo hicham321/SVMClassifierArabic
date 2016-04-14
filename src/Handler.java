@@ -1,6 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.io.*;
 
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,8 @@ public class Handler {
 	private ArrayList<String> MotRacinTemp=new ArrayList<String>();
 	
 	private ArrayList<String> MotNonRacin= new ArrayList<String>();
+	
+	private File file  ;
 
 	private int compteur ;
 	
@@ -92,12 +95,14 @@ public class Handler {
 				interfaceRacin.dispose();
 
 			}
+			
+			// L'action du bouton Lancé Racinisation 
 			if(e.getSource()== interfaceRacin.getLanceRacinButton()){
 				try{
 					racinisation.connectio("jdbc:ucanaccess://C:/Users/Hicham/Desktop/Database71.accdb");
 					
 					interfaceRacin.getLanceRacinButton().setEnabled(false);
-					ArrayList<String> list =racinisation.LanceRacin();
+					ArrayList<String> list =racinisation.LanceRacin(file);
 					
 					
 					
