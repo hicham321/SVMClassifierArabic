@@ -3,6 +3,9 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.io.*;
 
+import javafx.stage.FileChooser;
+
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 
@@ -19,12 +22,14 @@ public class Handler {
 	InterfaceRacinisaion interfaceRacin = new InterfaceRacinisaion();
 	
 	private ArrayList<String> MotRacin= new ArrayList<String>();
-	
-	private ArrayList<String> MotRacinTemp=new ArrayList<String>();
-	
+		
 	private ArrayList<String> MotNonRacin= new ArrayList<String>();
+		
+	private File file ;
 	
-	private File file  ;
+	private JFileChooser filechooser = new JFileChooser();
+	
+	private int returnVal;
 
 	private int compteur ;
 	
@@ -94,6 +99,14 @@ public class Handler {
 			if(e.getSource()==interfaceRacin.getAnnuleButton()){
 				interfaceRacin.dispose();
 
+			}
+			//l'action du bouton Choisi 
+			if(e.getSource()== interfaceRacin.getChoisiButton()){
+				returnVal = filechooser.showOpenDialog(null);
+	            if(returnVal == JFileChooser.APPROVE_OPTION){
+	                    file = filechooser.getSelectedFile();
+	                    }
+				
 			}
 			
 			// L'action du bouton Lancé Racinisation 

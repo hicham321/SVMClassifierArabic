@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-//l'interface pour ajouté un racin pour chaque mot 
+//l'interface pour ajouté un racin pour chaque mot "GUI"
 
 public class InterfaceRacinisaion extends JFrame {
 	
@@ -89,6 +89,7 @@ public class InterfaceRacinisaion extends JFrame {
 		this.Ok.addActionListener(listner);
 		this.Annule.addActionListener(listner);
 		this.lanceRacinisation.addActionListener(listner);
+		this.Choisi.addActionListener(listner);
 		
 	}
 	// les methode get 
@@ -99,6 +100,11 @@ public class InterfaceRacinisaion extends JFrame {
 	
 	public JButton getAnnuleButton(){
 		return this.Annule;
+	}
+	
+	public JButton getChoisiButton(){
+		
+		return this.Choisi;
 	}
 	
 	public JButton getAjoutRacinButton(){
