@@ -15,7 +15,7 @@ public vectorisation(ArrayList<String> list)  {
 	
 	}
 
-private void TraitmentDocument(ArrayList<String> list) {
+private void PoidDansDocument(ArrayList<String> list) {
 		
 		
 		
@@ -33,11 +33,11 @@ private void TraitmentDocument(ArrayList<String> list) {
 					
 				}
 			}
-
-			mapfortext.put(list.get(k), compteur);
+            //poid de mot dans le document
+			mapfortext.put(list.get(k), compteur/list.size());
 		}
 		ArrayList <String> cles = new ArrayList<String>(mapfortext.keySet());
-
+        //pour affiché dans l'interface 
 		for(String cle: cles){
 			
 		    System.out.println(cle + ": " + mapfortext.get(cle));
