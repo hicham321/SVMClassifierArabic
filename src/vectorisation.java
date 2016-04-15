@@ -8,22 +8,17 @@ import java.util.Map;
 
 public class vectorisation {
 	
-	public int nbrMotVide;
+
 	
+public vectorisation(ArrayList<String> list)  {
 	
-public vectorisation(File textFile) throws IOException,FileNotFoundException,UnsupportedEncodingException {
-	
-	TraitmentDocument(textFile);
 	
 	}
 
-private void TraitmentDocument(File textFile) throws FileNotFoundException,UnsupportedEncodingException,IOException{
-		
-		StopWord st =new StopWord(textFile);
+private void TraitmentDocument(ArrayList<String> list) {
 		
 		
-		ArrayList<String>list=st.EliminerStopWord();
-		this.nbrMotVide= st.nombredemotvides;
+		
 		
 		Map <String,Integer> mapfortext=new HashMap<String,Integer>();
 		
@@ -64,9 +59,8 @@ public int CompteToutLesMots(ArrayList<ArrayList<String>> listGrand){
 
 public static void main(String[] args) throws IOException,UnsupportedEncodingException,FileNotFoundException {
 	
-	File file= new File("C:/Users/Hicham/Desktop/stop-words_arabic_1_ar.txt");
+	//File file= new File("C:/Users/Hicham/Desktop/stop-words_arabic_1_ar.txt");
 	
-	vectorisation v = new vectorisation(file);
 	
 	
 

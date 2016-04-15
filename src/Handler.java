@@ -2,9 +2,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.io.*;
-
-import javafx.stage.FileChooser;
-
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -70,6 +67,7 @@ public class Handler {
 						   GrandList.add(MotRacin);
 						   MotRacin.clear();
 						   MotNonRacin.clear();
+						   interfaceRacin.getLanceRacinButton().setEnabled(true);
 						    
 				    }else{
 						   System.out.println(MotNonRacin.get(compteur));
@@ -95,6 +93,8 @@ public class Handler {
 			}
 			
 			if(e.getSource()== interfaceRacin.getOkButton()){
+				//le code qui lance la vectorisation et ferme l'interface de racinisation
+				
 				interfaceRacin.dispose();
 				
 			}
