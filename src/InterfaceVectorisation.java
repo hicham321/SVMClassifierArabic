@@ -7,11 +7,18 @@ import javax.swing.JTextArea;
 
 public class InterfaceVectorisation extends JFrame {
 	
-	private JTextArea affiche = new JTextArea();
+	private JTextArea AfficheRacinisation = new JTextArea();
+	
+	private JTextArea AfficheEliminationMotVides = new JTextArea();
+
+	private JTextArea AfficheVectorisationparDoc = new JTextArea();
+
+	private JTextArea AfficheVectorisationParCor = new JTextArea();
+
 	
 	public InterfaceVectorisation(){
 		
-		this.setSize(600, 400);
+		this.setSize(1000, 900);
 		
 		this.setTitle("Vectorisation");
 		
@@ -21,16 +28,29 @@ public class InterfaceVectorisation extends JFrame {
 		
 		panel.setLayout(null);
 		
-		panel.add(this.affiche);
+		panel.add(this.AfficheRacinisation);
 		
-		this.affiche.setBounds(50, 50, 200, 200);
-
+		this.AfficheRacinisation.setBounds(50, 50, 200, 200);
+		
+        panel.add(this.AfficheEliminationMotVides);
+		
+		this.AfficheEliminationMotVides.setBounds(50, 50, 200, 200);
+		
+        panel.add(this.AfficheVectorisationparDoc);
+		
+		this.AfficheVectorisationparDoc.setBounds(50, 50, 200, 200);
+		
+        panel.add(this.AfficheVectorisationParCor);
+		
+		this.AfficheVectorisationParCor.setBounds(50, 50, 200, 200);
+		
+        this.add(panel);
 		
 	}
 	
 	public void SetTextArea(String st){
 		
-		this.affiche.setText(st);
+		this.AfficheRacinisation.setText(st);
 	}
 
 }

@@ -5,9 +5,11 @@ public class Main {
 		
 		Racinisation r = new Racinisation();
 		
+		InterfaceVectorisation v = new InterfaceVectorisation();
+		
 		InterfaceRacinisaion inter= new InterfaceRacinisaion();
 		
-		Handler h = new Handler(r, inter);
+		Handler h = new Handler(r, inter,v);
 		
 		inter.setVisible(true);
 		

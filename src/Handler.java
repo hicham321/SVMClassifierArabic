@@ -18,6 +18,8 @@ public class Handler {
 	
 	InterfaceRacinisaion interfaceRacin = new InterfaceRacinisaion();
 	
+	InterfaceVectorisation interfaceVect = new InterfaceVectorisation();
+	
 	private ArrayList<String> MotRacin= new ArrayList<String>();
 		
 	private ArrayList<String> MotNonRacin= new ArrayList<String>();
@@ -32,7 +34,9 @@ public class Handler {
 
 	private int compteur ;
 	
-	public Handler(Racinisation racinisation , InterfaceRacinisaion interfaceRacin){
+	public Handler(Racinisation racinisation , InterfaceRacinisaion interfaceRacin,InterfaceVectorisation interfaceVect){
+		
+		this.interfaceVect= interfaceVect;
 		
 		this.racinisation= racinisation;
 		
@@ -96,6 +100,11 @@ public class Handler {
 				//le code qui lance la vectorisation et ferme l'interface de racinisation
 				
 				interfaceRacin.dispose();
+				
+				interfaceVect.setVisible(true);
+				
+				
+				
 				
 			}
 			if(e.getSource()==interfaceRacin.getAnnuleButton()){
