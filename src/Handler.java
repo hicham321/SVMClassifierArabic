@@ -24,6 +24,8 @@ public class Handler {
 	private ArrayList<String> MotRacin= new ArrayList<String>();
 		
 	private ArrayList<String> MotNonRacin= new ArrayList<String>();
+	
+	private ArrayList<ArrayList<String>> GrandList = new ArrayList<ArrayList<String>>();
 		
 	private File file ;
 	
@@ -55,14 +57,19 @@ public class Handler {
 				else{
 					
 				    if(compteur==MotNonRacin.size()-1){
-						   JOptionPane.showMessageDialog(null, "La racinisagtion est terminé");
+						   JOptionPane.showMessageDialog(null, "La racinisagtion du document est terminé");
 						   String Racin =interfaceRacin.getTextRacin(); 
 						   String Mot = interfaceRacin.getTextMot();
-
+                           //
 						   System.out.println(MotNonRacin.get(compteur));
 						   racinisation.InsT(Mot, Racin);
 						   interfaceRacin.getTextMott().setText("");
 						   interfaceRacin.getTextRacint().setText("");
+						   //pour resette l'array list et l'ajout a lagrand list
+						   
+						   GrandList.add(MotRacin);
+						   MotRacin.clear();
+						   MotNonRacin.clear();
 						    
 				    }else{
 						   System.out.println(MotNonRacin.get(compteur));
@@ -70,11 +77,6 @@ public class Handler {
 						   String Racin =interfaceRacin.getTextRacin(); 
 						   String Mot = interfaceRacin.getTextMot();
 						   System.out.println(MotNonRacin.get(compteur));
-
-						   //inserer dans la base
-						   /*racinisation.Ins(interfaceRacin.getTextMot());
-						   racinisation.insRacin(Racin);*/
-							
 						   racinisation.InsT(Mot, Racin);
 						
 						   //inserer dans la liste

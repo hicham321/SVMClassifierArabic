@@ -51,6 +51,17 @@ private void TraitmentDocument(File textFile) throws FileNotFoundException,Unsup
 
 }
 
+public int CompteToutLesMots(ArrayList<ArrayList<String>> listGrand){
+	int longeur= 0;
+	for(int i=0; i<listGrand.size();i++){
+		for(int j=0 ;j<listGrand.get(i).size();j++){
+		  longeur++; 	
+		}
+		
+	}
+	return longeur;
+}
+
 public static void main(String[] args) throws IOException,UnsupportedEncodingException,FileNotFoundException {
 	
 	File file= new File("C:/Users/Hicham/Desktop/stop-words_arabic_1_ar.txt");
