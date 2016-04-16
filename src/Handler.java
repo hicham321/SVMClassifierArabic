@@ -16,6 +16,8 @@ public class Handler {
 	
 	Racinisation racinisation= new Racinisation();
 	
+	vectorisation vectorisation = new vectorisation();
+	
 	InterfaceRacinisaion interfaceRacin = new InterfaceRacinisaion();
 	
 	InterfaceVectorisation interfaceVect = new InterfaceVectorisation();
@@ -34,11 +36,15 @@ public class Handler {
 
 	private int compteur ;
 	
-	public Handler(Racinisation racinisation , InterfaceRacinisaion interfaceRacin,InterfaceVectorisation interfaceVect){
+	
+	
+	public Handler(Racinisation racinisation,vectorisation vectorisation , InterfaceRacinisaion interfaceRacin,InterfaceVectorisation interfaceVect){
 		
 		this.interfaceVect= interfaceVect;
 		
 		this.racinisation= racinisation;
+		
+		this.vectorisation= vectorisation;
 		
 		this.interfaceRacin= interfaceRacin;
 		
@@ -103,6 +109,8 @@ public class Handler {
 				
 				interfaceVect.setVisible(true);
 				
+				int sommeMot=vectorisation.CompteToutLesMots(GrandList);
+				
 				
 				
 				
@@ -127,6 +135,7 @@ public class Handler {
 					
 					interfaceRacin.getLanceRacinButton().setEnabled(false);
 					ArrayList<String> list =racinisation.LanceRacin(file);
+					
 					
 					
 					

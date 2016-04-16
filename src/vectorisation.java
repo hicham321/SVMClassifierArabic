@@ -10,7 +10,7 @@ public class vectorisation {
 	
 
 	
-public vectorisation(ArrayList<String> list)  {
+public vectorisation()  {
 	
 	
 	}
