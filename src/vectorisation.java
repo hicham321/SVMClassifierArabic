@@ -15,7 +15,7 @@ public vectorisation()  {
 	
 	}
 
-private void PoidDansDocument(ArrayList<String> list) {
+private Map PoidDansDocument(ArrayList<String> list) {
 		
 		
 		
@@ -43,7 +43,22 @@ private void PoidDansDocument(ArrayList<String> list) {
 		    System.out.println(cle + ": " + mapfortext.get(cle));
 
 		}
+		return mapfortext;
 
+}
+public Map PoidMotCorpus(ArrayList<ArrayList<String>> grandlist){
+	
+	ArrayList<String> list = new ArrayList<String>();
+	
+	for(int i=0;i<grandlist.size();i++){
+		for(int j=0; j<grandlist.get(i).size();j++){
+			
+			list.add(grandlist.get(i).get(j));
+			
+		}
+	}
+	Map<String, Integer> map= PoidDansDocument(list);
+	return map;
 }
 
 public int CompteToutLesMots(ArrayList<ArrayList<String>> listGrand){

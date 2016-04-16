@@ -111,7 +111,10 @@ public class Handler {
 				
 				int sommeMot=vectorisation.CompteToutLesMots(GrandList);
 				
-				
+				//poid de mot par rapport au corpus
+				interfaceVect.SetTextAreaVectCor(vectorisation.PoidMotCorpus(GrandList).toString());
+				//poid du mot par rapport au document
+				interfaceVect.SetTextAreaVectDoc("");
 				
 				
 			}
