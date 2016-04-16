@@ -48,9 +48,21 @@ public class InterfaceVectorisation extends JFrame {
 		
 	}
 	
-	public void SetTextArea(String st){
+	public void SetTextAreaRacin (String st){
 		
 		this.AfficheRacinisation.setText(st);
+	}
+    public void SetTextAreaElimin(String st){
+		
+		this.AfficheEliminationMotVides.setText(st);
+	}
+    public void SetTextAreaVectDoc(String st){
+		
+		this.AfficheVectorisationparDoc.setText(st);
+	}
+    public void SetTextAreaVectCor(String st){
+		
+		this.AfficheVectorisationParCor.setText(st);
 	}
 
 }
