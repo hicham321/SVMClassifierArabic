@@ -30,19 +30,19 @@ public class InterfaceVectorisation extends JFrame {
 		
 		panel.add(this.AfficheRacinisation);
 		
-		this.AfficheRacinisation.setBounds(50, 50, 200, 200);
+		this.AfficheRacinisation.setBounds(50, 50, 400, 200);
 		
         panel.add(this.AfficheEliminationMotVides);
 		
-		this.AfficheEliminationMotVides.setBounds(50, 50, 200, 200);
+		this.AfficheEliminationMotVides.setBounds(50, 150, 400, 200);
 		
         panel.add(this.AfficheVectorisationparDoc);
 		
-		this.AfficheVectorisationparDoc.setBounds(50, 50, 200, 200);
+		this.AfficheVectorisationparDoc.setBounds(50, 250, 400, 200);
 		
         panel.add(this.AfficheVectorisationParCor);
 		
-		this.AfficheVectorisationParCor.setBounds(50, 50, 200, 200);
+		this.AfficheVectorisationParCor.setBounds(50, 350, 400, 200);
 		
         this.add(panel);
 		
