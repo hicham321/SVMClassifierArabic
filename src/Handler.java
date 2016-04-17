@@ -2,8 +2,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.io.*;
+
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+
+import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 
 
@@ -57,6 +60,7 @@ public class Handler {
 			
 			//l'action du boutton ajoubutton 
 			if (e.getSource()==interfaceRacin.getAjoutRacinButton()) {
+
 				if(interfaceRacin.getTextRacin().isEmpty()){
 				   JOptionPane.showMessageDialog(null, "entreé un Racin pour continue");
 				}
@@ -73,10 +77,17 @@ public class Handler {
 						   interfaceRacin.getTextMott().setText("");
 						   interfaceRacin.getTextRacint().setText("");
 						   //pour resette l'array list et l'ajout a lagrand list
+						   ArrayList<String> list= new ArrayList<String>();
 						   
-						   GrandList.add(MotRacin);
+                           for(int i =0;i<MotRacin.size();i++){
+							  list.add(MotRacin.get(i)); 
+						   }
+						   GrandList.add(list);
+						   
+						   System.out.println(GrandList);
 						   MotRacin.clear();
 						   MotNonRacin.clear();
+						   System.out.println(GrandList);
 						   interfaceRacin.getLanceRacinButton().setEnabled(true);
 						    
 				    }else{
@@ -84,7 +95,6 @@ public class Handler {
 
 						   String Racin =interfaceRacin.getTextRacin(); 
 						   String Mot = interfaceRacin.getTextMot();
-						   System.out.println(MotNonRacin.get(compteur));
 						   racinisation.InsT(Mot, Racin);
 						
 						   //inserer dans la liste
@@ -104,14 +114,17 @@ public class Handler {
 			
 			if(e.getSource()== interfaceRacin.getOkButton()){
 				//le code qui lance la vectorisation et ferme l'interface de racinisation
-				
+				System.out.println("ok     "+GrandList.get(0));
+
 				interfaceRacin.dispose();
 				
 				interfaceVect.setVisible(true);
 				
 				int sommeMot=vectorisation.CompteToutLesMots(GrandList);
-				
+				System.out.println(sommeMot);
 				//poid de mot par rapport au corpus
+				
+				//System.out.println(vectorisation.PoidMotCorpus(GrandList));
 				interfaceVect.SetTextAreaVectCor(vectorisation.PoidMotCorpus(GrandList).toString());
 				//poid du mot par rapport au document
 				interfaceVect.SetTextAreaVectDoc("");
@@ -124,6 +137,7 @@ public class Handler {
 			}
 			//l'action du bouton Choisi 
 			if(e.getSource()== interfaceRacin.getChoisiButton()){
+
 				returnVal = filechooser.showOpenDialog(null);
 	            if(returnVal == JFileChooser.APPROVE_OPTION){
 	                    file = filechooser.getSelectedFile();

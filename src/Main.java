@@ -1,6 +1,7 @@
 //la classe main 
 
 public class Main {
+	
 	public static void main(String[] args) {
 		
 		Racinisation r = new Racinisation();
