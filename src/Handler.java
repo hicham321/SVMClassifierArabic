@@ -84,10 +84,8 @@ public class Handler {
 						   }
 						   GrandList.add(list);
 						   
-						   System.out.println(GrandList);
 						   MotRacin.clear();
 						   MotNonRacin.clear();
-						   System.out.println(GrandList);
 						   interfaceRacin.getLanceRacinButton().setEnabled(true);
 						    
 				    }else{
@@ -121,7 +119,7 @@ public class Handler {
 				interfaceVect.setVisible(true);
 				
 				int sommeMot=vectorisation.CompteToutLesMots(GrandList);
-				System.out.println(sommeMot);
+				//System.out.println(sommeMot);
 				//poid de mot par rapport au corpus
 				
 				//System.out.println(vectorisation.PoidMotCorpus(GrandList));

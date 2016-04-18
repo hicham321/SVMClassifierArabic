@@ -34,7 +34,10 @@ private Map PoidDansDocument(ArrayList<String> list) {
 				}
 			}
             //poid de mot dans le document
-			mapfortext.put(list.get(k), compteur/list.size());
+
+			double res = (double)compteur/list.size(); 
+
+			mapfortext.put(list.get(k), compteur);
 		}
 		ArrayList <String> cles = new ArrayList<String>(mapfortext.keySet());
         //pour affiché dans l'interface 

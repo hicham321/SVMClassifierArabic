@@ -2,6 +2,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 
@@ -14,6 +15,10 @@ public class InterfaceVectorisation extends JFrame {
 	private JTextArea AfficheVectorisationparDoc = new JTextArea();
 
 	private JTextArea AfficheVectorisationParCor = new JTextArea();
+	
+	private JScrollPane scrollArea = new JScrollPane(this.AfficheVectorisationParCor);
+
+
 
 	
 	public InterfaceVectorisation(){
@@ -38,11 +43,15 @@ public class InterfaceVectorisation extends JFrame {
 		
         panel.add(this.AfficheVectorisationparDoc);
 		
-		this.AfficheVectorisationparDoc.setBounds(50, 250, 50, 50);
+		//this.AfficheVectorisationparDoc.setBounds(50, 250, 50, 50);
 		
-        panel.add(this.AfficheVectorisationParCor);
+        //panel.add(this.AfficheVectorisationParCor);
 		
-		this.AfficheVectorisationParCor.setBounds(50, 350, 50, 50);
+		//this.AfficheVectorisationParCor.setBounds(50, 350, 150, 50);
+		
+		panel.add(this.scrollArea);
+		
+		this.scrollArea.setBounds(50, 350, 150, 50);
 		
         this.add(panel);
 		
