@@ -125,7 +125,7 @@ public class Handler {
 				//System.out.println(vectorisation.PoidMotCorpus(GrandList));
 				interfaceVect.SetTextAreaVectCor(vectorisation.PoidMotCorpus(GrandList).toString());
 				//poid du mot par rapport au document
-				interfaceVect.SetTextAreaVectDoc("");
+				interfaceVect.SetTextAreaVectDoc(vectorisation.PoidDoc(GrandList).toString());
 				
 				
 			}

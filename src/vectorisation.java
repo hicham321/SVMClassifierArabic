@@ -20,7 +20,7 @@ private Map PoidDansDocument(ArrayList<String> list) {
 		
 		
 		
-		Map <String,Integer> mapfortext=new HashMap<String,Integer>();
+		Map <String,Double> mapfortext=new HashMap<String,Double>();
 		
 		
 		for(int k=0;k<list.size();k++){
@@ -37,7 +37,7 @@ private Map PoidDansDocument(ArrayList<String> list) {
 
 			double res = (double)compteur/list.size(); 
 
-			mapfortext.put(list.get(k), compteur);
+			mapfortext.put(list.get(k), res);
 		}
 		ArrayList <String> cles = new ArrayList<String>(mapfortext.keySet());
         //pour affiché dans l'interface 
@@ -63,7 +63,21 @@ public Map PoidMotCorpus(ArrayList<ArrayList<String>> grandlist){
 	Map<String, Integer> map= PoidDansDocument(list);
 	return map;
 }
+public ArrayList<Map<String, Double>> PoidDoc(ArrayList<ArrayList<String>> grandlist){
+	
+ArrayList<Map<String,Double>> listmap = new ArrayList<Map<String,Double>>();
+	
+	
+	for(int i=0;i<grandlist.size();i++){
+		Map<String, Double> map= PoidDansDocument(grandlist.get(i));
+		listmap.add(map);
+		
+	}
 
+	
+	
+	return listmap ;
+}
 public int CompteToutLesMots(ArrayList<ArrayList<String>> listGrand){
 	int longeur= 0;
 	for(int i=0; i<listGrand.size();i++){
