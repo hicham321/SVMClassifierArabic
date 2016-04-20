@@ -89,14 +89,20 @@ public class Handler {
 						   interfaceRacin.getLanceRacinButton().setEnabled(true);
 						    
 				    }else{
-						   System.out.println(MotNonRacin.get(compteur));
 
 						   String Racin =interfaceRacin.getTextRacin(); 
 						   String Mot = interfaceRacin.getTextMot();
 						   racinisation.InsT(Mot, Racin);
 						
 						   //inserer dans la liste
-						   MotRacin.add(Racin);
+						   for(int i=0; i<MotNonRacin.size();i++){
+							   
+							   if(MotNonRacin.get(i).equals(Mot)){
+								   
+						           MotRacin.add(Racin);
+						           MotNonRacin.remove(i);
+						       }
+						   }
 						
 						   interfaceRacin.getTextMott().setText(MotNonRacin.get(compteur+1));
 						   interfaceRacin.getTextRacint().setText("");
