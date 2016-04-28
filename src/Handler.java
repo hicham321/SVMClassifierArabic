@@ -95,12 +95,14 @@ public class Handler {
 						   racinisation.InsT(Mot, Racin);
 						
 						   //inserer dans la liste
+						   System.out.println(MotNonRacin);
 						   for(int i=0; i<MotNonRacin.size();i++){
 							   
 							   if(MotNonRacin.get(i).equals(Mot)){
 								   
 						           MotRacin.add(Racin);
 						           MotNonRacin.remove(i);
+						           
 						       }
 						   }
 						

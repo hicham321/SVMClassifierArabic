@@ -63,6 +63,49 @@ public Map PoidMotCorpus(ArrayList<ArrayList<String>> grandlist){
 	Map<String, Integer> map= PoidDansDocument(list);
 	return map;
 }
+
+//Reused method from HMM classifier
+
+private ArrayList<ArrayList<String>>   FichierAuVecteur (String LienVersRepertoire) throws FileNotFoundException , UnsupportedEncodingException ,IOException{
+	    
+
+ 	
+		File dir = new File(LienVersRepertoire);
+		
+		  File[] ListeDeRepertoire = dir.listFiles();
+		  
+		  int compteur =0;
+		  if (ListeDeRepertoire != null) {
+		    for (File child : ListeDeRepertoire) {
+		      // Do something with child
+		    	
+		    	ArrayList<String> VecteurFichier =new ArrayList<>();
+		    	
+		    	StopWord st =new StopWord(child);
+		    	VecteurFichier= st.EliminerStopWord();
+		    	
+		    	
+		   
+		    	
+		    	
+		    	
+		        this.VecteurDesFichiers.add(VecteurFichier);
+		        compteur++;
+		      
+		    }
+		  } else {
+		    // Handle the case where dir is not really a directory.
+		    // Checking dir.isDirectory() above would not be sufficient
+		    // to avoid race conditions with another process that deletes
+		    // directories.
+			  System.out.println(" Ce n'est pas une repertoire de fichiers ");
+		  }
+		
+	this.NombreDeDocuments=compteur;
+	
+	
+	return VecteurDesFichiers;
+}
 public ArrayList<Map<String, Double>> PoidDoc(ArrayList<ArrayList<String>> grandlist){
 	
 ArrayList<Map<String,Double>> listmap = new ArrayList<Map<String,Double>>();
